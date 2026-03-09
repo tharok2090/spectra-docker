@@ -9,6 +9,9 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
     # 1. Clonar el repositorio
@@ -28,4 +31,4 @@ jobs:
 
     # 4. Subir la imagen a GHCR
     - name: Push Docker image
-      run: docker push ghcr.io/${{ github.repository }}/spectra:latest
+      run: docker push ghcr.io/${{ github.repository_owner }}/spectra:latest
