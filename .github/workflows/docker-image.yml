@@ -27,7 +27,7 @@ jobs:
 
     # 3. Construir la imagen Docker
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ghcr.io/${{ github.repository }}/spectra:latest
+      run: docker build . --file Dockerfile --tag ghcr.io/${{ github.repository_owner }}/spectra:latest
 
     # 4. Subir la imagen a GHCR
     - name: Push Docker image
